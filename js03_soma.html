@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>js01_Estrutura2.html</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta charset="utf-8"/>
+        <script lang="javascript">
+            function soma1(){
+                    var numero1;
+                    var numero2;
+                    numero1 = parseInt(window.prompt('Insira o primeiro número: '));
+                    numero2 = parseInt(window.prompt('Insira o segundo número: '));
+                    var soma = numero1 + numero2;
+
+                    document.write('O resultado é: ' +soma);
+               }
+
+               function soma2(){
+                   var numero1;
+                   var numero2;
+                   numero1 = parseInt(document.getElementById('f_numero1').value);
+                   numero2 = parseInt(document.getElementById('f_numero2').value);
+                   var soma = numero1 + numero2;
+
+                   window.alert('O resultado é: ' +soma);
+               }
+
+               function ordenar(){
+                    var numero1;
+                    var numero2;
+                    numero1 = parseInt(document.getElementById('f_numero1').value);
+                    numero2 = parseInt(document.getElementById('f_numero2').value);
+                    
+                    if(numero1 > numero2){
+                        var numero3 = numero1;
+                        numero1 = numero2;
+                        numero2 = numero3;
+                    }
+
+                   window.alert('A ordem é: ' +numero1 +', ' +numero2);
+               }
+
+               function confirmar(){
+                   var resposta = window.confirm('Você é humano?')
+                    if(resposta == true){
+                        window.alert('Você é um humano!');
+                    } else {
+                        window.alert('Você apertou cancelar, então não é humano');
+                    }
+               }
+
+        </script>
+    </head>
+    <body>
+        <form name="FormSoma" method="POST">
+            Insira o primeiro número: <input type="text" id="f_numero1" name="f_numero1" /><br>
+            Insira o segundo número:  <input type="text" id="f_numero2" name="f_numero2" /> <br>
+            <input type="button" id="btn_soma1" name="btn_soma1" value="Soma Prompt" onclick="soma1()"/>
+            <input type="button" id="btn_soma2" name="btn_soma2" value="Soma Formulário" onclick="soma2()"/>
+            <input type="button" id="btn_ordenar" name="btn_ordenar" value="Ordenar" onclick="ordenar()"/>
+            <input type="button" id="btn_humano" name="btn_humano" value="Teste humano" onclick="confirmar()"/>
+            <input type="reset" name="btn_cancela" value="Cancelar" />
+        </form>
+    </body>
+</html>

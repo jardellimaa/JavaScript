@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafios - Módulo 01</title>
+</head>
+
+<body>
+    <button onclick="abrir1()">Exercício 1</button>
+    <br><br>
+    <button onclick="abrir2()">Exercício 2</button>
+    <br><br>
+    <button onclick="abrir3()">Exercício 3</button>
+    <br><br>
+    <button onclick="abrir4()">Exercício 4</button>
+    <br><br>
+    <button onclick="abrir5()">Exercício 5</button>
+    <script>
+        function abrir1() {
+            var endereco = {
+                rua: "Rua dos pinheiros",
+                numero: 1293, bairro: "Centro",
+                cidade: "São Paulo",
+                uf: "SP"
+            };
+            alert(retornaEndereco());
+            function retornaEndereco() {
+                return 'O usuário mora em ' + endereco.cidade + ' / ' + endereco.uf + ', no bairro ' + endereco.bairro + ', na rua "' + endereco.rua + '" com o nº ' + endereco.numero + '.';
+            }
+        }
+
+        function abrir2() {
+            alert(pares(32, 321));
+            function pares(x, y) {
+                var npares = '';
+                for (x; x <= y; x++) {
+                    if (x % 2 == 0) {
+                        npares += x + ', ';
+                    }
+                }
+                return npares.substring(0, npares.length - 2) + '.'
+            }
+        }
+
+        function abrir3() {
+            var skills = ["Javascript", "ReactJS", "React Native"];
+            alert(temHabilidade(skills));
+            function temHabilidade(skills) {
+                var javascript = false;
+                for (var i = 0; i < skills.length; i++) {
+                    if (skills.indexOf('Javascript', i) != -1)
+                        javascript = true
+                }
+                return javascript;
+            }
+        }
+
+        function abrir4() {
+            var anosEstudo = 7;
+            alert(experiencia(anosEstudo));
+            function experiencia(anosEstudo) {
+                switch (anosEstudo) {
+                    case 0: return 'Iniciante';
+                    case 1: return 'Iniciante';
+                    case 2: return 'Intermediário';
+                    case 3: return 'Intermediário';
+                    case 4: return 'Avançado';
+                    case 5: return 'Avançado';
+                    case 6: return 'Avançado';
+                    default: return 'Jedi Master';
+                }
+            }
+        }
+
+        function abrir5() {
+            var usuarios = [
+                {
+                    nome: "Diego",
+                    habilidades: ["Javascript", "ReactJS", "Redux"]
+                },
+                {
+                    nome: "Gabriel",
+                    habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+                }
+            ];
+            alert(retornaHabilidades());
+            function retornaHabilidades() {
+                var saida = '';
+                for (var i = 0; i < usuarios.length; i++) {
+                    saida += 'O ' + usuarios[i].nome + ' possui as habilidades: ';
+                    for (var j = 0; j < usuarios[i].habilidades.length; j++) {
+                        saida += usuarios[i].habilidades[j] + ', ';
+                    }
+                    saida = saida.substring(0, saida.length - 2) + '\n';
+                }
+                return saida;
+            }
+        }
+    </script>
+</body>
+
+</html>

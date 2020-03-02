@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>js01_Estrutura2.html</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta charset="utf-8"/>
+        <script lang="javascript">
+            function saudacao(){
+                var js_nome;
+                js_nome = window.prompt('Digite o seu nome: ', 'Digite seu nome aqui');
+                document.write('Olá ' + js_nome + ', Seja bem vindo!');
+               }
+
+               function concatena(){
+                    var js_nome;
+                    var js_sobrenome;
+                    var js_nomeCompleto;
+                    
+                    js_nome = document.getElementById('f_nome').value
+                    js_sobrenome = document.getElementById('f_sobrenome').value;
+                    js_nomeCompleto = js_nome + ' ' + js_sobrenome;
+                    
+                    window.alert('Olá ' + js_nomeCompleto);
+                    }
+        </script>
+    </head>
+    <body>
+        <h3>Programa de boas vindas!</h3>
+
+        <form name="FormContatena" method="POST">
+            Digite o Nome .........: <input type="text" id="f_nome" name="f_nome" /><br>
+            Digite o Sobrenome ....: <input type="text" id="f_sobrenome" name="f_sobrenome" /> <br>
+            <input type="button" name="btn_concatena" value="Concatenar" onclick="concatena()" />
+            <input type="button" name="btn_saudacao" value="Saudação" onclick="saudacao()" />
+            <input type="reset" name="btn_cancela" value="Cancelar" />
+        </form>
+    </body>
+</html>
